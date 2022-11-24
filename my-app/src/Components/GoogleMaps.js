@@ -84,8 +84,7 @@ const GoogleMaps = ({google}) => {
             if(state.address==null){
                 alert("debe ingresar la dirección de su tienda")
             }else{
-                //https://sandbox.zohoapis.com/crm/v2/functions/update_maps_widget/actions/execute?auth_type=apikey&zapikey=1003.2adc43de08da9debb61656e2b5ee18e2.5f15e6da14582678a2cd59414c68ed79
-                //https://www.zohoapis.com/crm/v2/functions/update_maps_widget/actions/execute?auth_type=apikey&zapikey=1003.7c02a5b10f13810ff9499d39a02c0d43.605b9c5964f99646e4da05c6b3e3afdc
+                
                 let map = {
                     "id": record.id,
                     "Latitud": mapCenter.lat.toFixed(10).toString(),
@@ -99,7 +98,7 @@ const GoogleMaps = ({google}) => {
                     map
                 },
                 "method" : "POST",
-                "url" : "https://www.zohoapis.com/crm/v2/functions/update_maps_widget/actions/execute?auth_type=apikey&zapikey=1003.7c02a5b10f13810ff9499d39a02c0d43.605b9c5964f99646e4da05c6b3e3afdc",
+                "url" : "https://www.zohoapis.com/crm/v2/functions/update_maps_widget/actions/execute?auth_type=apikey&zapikey={API-KEY}",
                 "param_type" : 1
                 };
                 ZOHO.CRM.CONNECTION.invoke(conn_name, req_data)
@@ -228,7 +227,7 @@ const GoogleMaps = ({google}) => {
 }
  
 export default GoogleApiWrapper({
-    apiKey: ('AIzaSyCmIWwq9Hetuto7tDFOVZStSt6IkZaULYM')
+    apiKey: ('API-KEY')
   })(GoogleMaps)
 
 
